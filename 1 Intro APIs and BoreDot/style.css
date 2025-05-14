@@ -1,0 +1,25 @@
+body {
+    background: #1D4350;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #A43931, #1D4350);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #A43931, #1D4350); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-repeat: no-repeat;
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.secondary{
+    background: #BA5370;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F4E2D8, #BA5370);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F4E2D8, #BA5370); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+button{
+    padding: 3.3rem;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+}
