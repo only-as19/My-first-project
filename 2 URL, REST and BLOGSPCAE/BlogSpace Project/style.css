@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Slab", serif;
+}
+
+nav{
+    background-color: bisque;
+    padding: 10px 20px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+nav h3{
+    margin: 0;
+}
+
+
+ul{
+    display: flex;
+    list-style: none;
+}
+
+li{
+    margin-left: 20px;
+    margin-right: 40px;
+    font-weight: bold;
+}
+
+li:hover{
+    color: brown;
+}
+
+#blog-list{
+    padding: 50px 10px 10px;
+}
+
