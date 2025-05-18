@@ -1,10 +1,12 @@
 
-fetch("https://apis.scrimba.com/jsonplaceholder/posts")
-.then(response => response.json())
-.then(data => {
-    const postsArray = data.slice(0 , 5)
-    console.log(postsArray)
-    let html = ""
+
+let postsArray = []
+const titleInput = document.getElementById("blog-title")
+const bodyInput = document.getElementById("blog-post")
+const myForm = document.getElementById("new-post")
+
+function renderPost(){
+ let html = ""
 
     for (let post of postsArray){
         html += `
@@ -14,13 +16,21 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
         `
     }
     document.getElementById("blog-list").innerHTML = html
+}
+
+fetch("https://apis.scrimba.com/jsonplaceholder/posts")
+.then(response => response.json())
+.then(data => {
+    postsArray = data.slice(0 , 5)
+    console.log(postsArray)
+   renderPost()
     })
 
 
-    document.getElementById("new-post").addEventListener('submit', function(e){
+    myForm.addEventListener('submit', function(e){
         e.preventDefault()
-        const postTitle = document.getElementById("blog-title").value
-        const postBody = document.getElementById("blog-post").value
+        const postTitle = titleInput.value
+        const postBody = bodyInput.value
         
         const postData = {
             title : postTitle,
@@ -34,5 +44,9 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
             }
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(post => {
+            postsArray.unshift(post)
+            renderPost()
+            myForm.reset()
+    })
     })
