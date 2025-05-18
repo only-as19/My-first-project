@@ -35,6 +35,21 @@ li:hover{
 }
 
 #blog-list{
-    padding: 50px 10px 10px;
+    padding: 10px;
 }
 
+form{
+    padding: 80px 10px 10px;
+    display: grid;
+    background-color: skyblue;
+}
+
+input#blog-title, textarea{
+    margin-bottom: 10px;
+}
+
+button{
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
