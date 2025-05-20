@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-amber-300: oklch(87.9% 0.169 91.605);
+    --color-green-700: oklch(52.7% 0.154 150.069);
     --spacing: 0.25rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
@@ -162,6 +163,9 @@
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
+  .mb-14 {
+    margin-bottom: calc(var(--spacing) * 14);
+  }
   .block {
     display: block;
   }
@@ -171,8 +175,47 @@
   .table {
     display: table;
   }
+  .h-32 {
+    height: calc(var(--spacing) * 32);
+  }
+  .h-full {
+    height: 100%;
+  }
   .h-screen {
     height: 100vh;
+  }
+  .w-\[8\] {
+    width: 8;
+  }
+  .w-\[85\] {
+    width: 85;
+  }
+  .w-\[85px\] {
+    width: 85px;
+  }
+  .w-\[86\=\] {
+    width: 86=;
+  }
+  .w-\[calc\(\)\] {
+    width: calc();
+  }
+  .w-\[calc\(1\)\] {
+    width: calc(1);
+  }
+  .w-\[calc\(10\)\] {
+    width: calc(10);
+  }
+  .w-\[calc\(12\)\] {
+    width: calc(12);
+  }
+  .w-\[calc\(100\%-2rem\)\] {
+    width: calc(100% - 2rem);
+  }
+  .w-\[calc\(120\)\] {
+    width: calc(120);
+  }
+  .w-full {
+    width: 100%;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -183,11 +226,17 @@
   .flex-col {
     flex-direction: column;
   }
+  .items-center {
+    align-items: center;
+  }
   .justify-between {
     justify-content: space-between;
   }
   .self-start {
     align-self: flex-start;
+  }
+  .self-stretch {
+    align-self: stretch;
   }
   .rounded {
     border-radius: 0.25rem;
@@ -198,6 +247,9 @@
   }
   .bg-amber-300 {
     background-color: var(--color-amber-300);
+  }
+  .bg-green-700 {
+    background-color: var(--color-green-700);
   }
   .p-0 {
     padding: calc(var(--spacing) * 0);

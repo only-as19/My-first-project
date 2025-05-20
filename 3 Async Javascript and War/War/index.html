@@ -4,10 +4,13 @@
     <title>War Game</title>
     <link rel="stylesheet" href="../output.css">
 </head>
-<body>
-    <button id="new-deck">New Deck! Please</button>
-    <button id="draw-card">Draw</button>
-    <div id="cards"></div>
+<body class="bg-green-700 h-screen m-0 p-0 flex flex-col justify-between items-center">
+    <button id="new-deck" class="bg-amber-300 p-1.5 rounded self-start">New Deck! Please</button>
+    <div id="cards">
+        <div id="card-slot" class="h-32 w-[85px] border rounded mb-14"></div>
+        <div id="card-slot" class="h-32 w-[85px] border rounded"></div>
+    </div>
+    <button id="draw-card" class="bg-amber-300 p-1.5 rounded self-stretch">Draw</button>
     <script src="index.js"></script>
 </body>
 </html>
