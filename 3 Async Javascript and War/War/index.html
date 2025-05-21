@@ -4,9 +4,12 @@
     <title>War Game</title>
     <link rel="stylesheet" href="../output.css">
 </head>
-<body class="bg-green-700 h-screen m-0 p-0 flex flex-col justify-between items-center">
-    <button id="new-deck" class="bg-amber-300 p-1.5 rounded self-start">New Deck! Please</button>
-    <h2 id="callWinner" class="text-2xl text-white font-bold">Game of War</h2>
+<body class="bg-green-700 h-screen m-0 p-0 flex flex-col justify-between items-center text-white">
+    <div class="flex self-start items-center">
+        <button id="new-deck" class="bg-amber-300 p-1.5 rounded self-start">New Deck! Please</button>
+    <p id="remaining-card" class="ml-2.5"></p>
+    </div>
+    <h2 id="callWinner" class="text-2xl font-bold">Game of War</h2>
     <div id="cards">
         <div id="card-slot" class="h-32 w-[85px] border rounded mb-14"></div>
         <div id="card-slot" class="h-32 w-[85px] border rounded"></div>
