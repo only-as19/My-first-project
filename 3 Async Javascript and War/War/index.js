@@ -5,13 +5,14 @@ const newDeck = document.getElementById("new-deck")
 const drawCard = document.getElementById("draw-card")
 const callWinner = document.getElementById("callWinner")
 const remainingCards = document.getElementById("remaining-card") 
-let rCard
+
 
 function handleClick(){
     fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle")
     .then(response => response.json())
     .then(data =>{ 
         console.log(data)
+        remainingCards.innerHTML = `Remaining cards: ${data.remaining}`
         deckId = data.deck_id
         
 
@@ -35,8 +36,13 @@ drawCard.addEventListener('click', () =>{
         const winnerText = determineWinner(data.cards[0],data.cards[1])
         console.log(winnerText)
         callWinner.textContent = winnerText
-        rCard =data.remaining
-        remainingCards.innerHTML = `Remaining cards: ${rCard}`
+        remainingCards.innerHTML = `Remaining cards: ${data.remaining}`
+
+        if(data.remaining === 0){
+            drawCard.disabled = true
+        }else{
+            drawCard.disabled = false
+        }
     })
 })
 
