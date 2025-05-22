@@ -15,7 +15,6 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
-    --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
@@ -170,6 +169,12 @@
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
   .mb-14 {
     margin-bottom: calc(var(--spacing) * 14);
   }
@@ -205,6 +210,9 @@
   }
   .border-collapse {
     border-collapse: collapse;
+  }
+  .cursor-not-allowed {
+    cursor: not-allowed;
   }
   .resize {
     resize: both;
@@ -249,10 +257,6 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
