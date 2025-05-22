@@ -45,6 +45,13 @@ drawCard.addEventListener('click', () =>{
             console.log("Disbaled")
             drawCard.disabled = true
             drawCard.style.cursor = "not-allowed";
+            if(cScore>mScore){
+                callWinner.textContent = "Computer won the Game"
+            }else if(cScore<mScore){
+                callWinner.textContent = "You won the Game"
+            }else{
+                callWinner.textContent = "It's a Tie Game"
+            }
         }
     })
 })
@@ -67,6 +74,3 @@ function determineWinner(card1,card2){
         return "War"
     }
 }
-
-const card1Obj = { value: "7" };
-const card2Obj = { value: "9" };
