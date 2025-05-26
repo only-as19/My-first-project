@@ -1,4 +1,5 @@
 const author = document.getElementById("author")
+const currency = document.getElementById("currency")
 const crypto =document.getElementById("crypto")
 
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
@@ -24,11 +25,19 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
   return res.json()
 })
 .then(data => {
-    crypto.innerHTML = 
+  console.log(data)
+    crypto.innerHTML += 
     `
     <img src="${data.image.small}">
     <span class="ml-2">${data.name}</span>
     `
+    currency.innerHTML +=
+    `
+    <p>🎯: ${data.market_data.current_price.usd}</p>
+    <p>👆: ${data.market_data.high_24h.usd}</p>
+    <p>👇: ${data.market_data.low_24h.usd}</p>
+    `
+
 })
-.catch(er => console.error(err))
+.catch(err => console.error(err))
   
