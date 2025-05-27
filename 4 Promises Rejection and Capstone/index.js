@@ -45,13 +45,27 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
 
 
 
-function timeChange() {
-  const d = new Date();
-  const time = d.toLocaleTimeString('en-US', { timeStyle: 'medium' });
-  displayTime.innerText = time;
-}
+// function timeChange() {
+//   const d = new Date();
+//   const time = d.toLocaleTimeString('en-US', { timeStyle: 'medium' });
+//   displayTime.innerText = time;
+// }
 
-setInterval(timeChange, 1000);
-timeChange();
+// setInterval(timeChange, 1000);
+// timeChange();
 
+
+navigator.geolocation.getCurrentPosition(position => {
+  fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
+  .then(res => {
+    if(!res.ok){
+      throw Error("Weathre data not available")
+    }
+    return res.json()
+  })
+  .then(data => { 
+    console.log(data)
+})
+.catch(err => console.error(err))
+});
   
