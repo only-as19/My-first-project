@@ -3,6 +3,7 @@ const currency = document.getElementById("currency")
 const crypto =document.getElementById("crypto")
 let time
 const displayTime = document.getElementById("time")
+const weather = document.getElementById("weather")
 
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
   .then(res => res.json())
@@ -64,7 +65,13 @@ navigator.geolocation.getCurrentPosition(position => {
     return res.json()
   })
   .then(data => { 
-    console.log(data)
+    // console.log(data)
+    const iconurl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+    console.log(iconurl)
+    weather.innerHTML = `
+      <img src=${iconurl} >
+    `
+
 })
 .catch(err => console.error(err))
 });
