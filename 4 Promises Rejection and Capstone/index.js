@@ -10,7 +10,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
   .then(res => res.json())
   .then(data => {
     console.log(data)
-    document.body.style.backgroundImage = `url(bg.jpg)`
+    document.body.style.backgroundImage = `url(${data.urls.full})`
     author.innerText = `By : Asad`
     
 
@@ -47,14 +47,14 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
 
 
 
-// function timeChange() {
-//   const d = new Date();
-//   const time = d.toLocaleTimeString('en-US', { timeStyle: 'medium' });
-//   displayTime.innerText = time;
-// }
+function timeChange() {
+  const d = new Date();
+  const time = d.toLocaleTimeString('en-US', { timeStyle: 'medium' });
+  displayTime.innerText = time;
+}
 
-// setInterval(timeChange, 1000);
-// timeChange();
+setInterval(timeChange, 1000);
+timeChange();
 
 
 navigator.geolocation.getCurrentPosition(position => {
@@ -71,7 +71,7 @@ navigator.geolocation.getCurrentPosition(position => {
     // console.log(iconurl)
     weather2.innerHTML = `
       <img class="w-20" src=${iconurl} >
-      <p class="m-0 text-2xl -ml-3-">${Math.round(data.main.temp)}°C</p>
+      <p class="m-0 text-2xl -ml-3- font-semibold">${Math.round(data.main.temp)}°C</p>
       `
       weather.innerHTML += `
       <p class="-mt-6 self-center">${data.name}</p>
